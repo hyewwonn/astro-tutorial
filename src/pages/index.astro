@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
 const pageTitle = 'Home Page';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
+  <!-- 클라이언트 로드시 JS 실행 → 컴포넌트 상호작용 가능 (hydration) -->
+  <Greeting client:load messages={['Hej', 'Hallo', 'Hola', 'Habari']} />
 </BaseLayout>
